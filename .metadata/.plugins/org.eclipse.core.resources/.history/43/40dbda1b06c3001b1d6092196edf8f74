@@ -1,0 +1,44 @@
+package Test;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import org.testng.annotations.DataProvider;
+
+
+
+public class DataInput {
+
+	public static XSSFSheet sh;
+	@DataProvider(name="d1")
+	public static Object[][] datain () throws IOException
+	{
+		FileInputStream f= new FileInputStream("C:\\Users\\danniyax\\Documents\\SwagLabs.xlsx");
+		
+		XSSFWorkbook w= new XSSFWorkbook(f);
+			sh= w.getSheet("Sheet1");
+			int t=sh.getLastRowNum();
+			Object a[][]=new Object[t][2];
+			Object ob[][]= new Object[t][2];
+			
+			for(int i=1;i<t;i++)
+			{
+				for(int j=0;i<2;i++)
+				{
+					Row r= sh.getRow(i);
+					Cell c= r.getCell(j); 
+					ob[i][j]=c.getStringCellValue();
+				   
+					return ob;
+					 }
+			}
+			
+			
+
+}
+}

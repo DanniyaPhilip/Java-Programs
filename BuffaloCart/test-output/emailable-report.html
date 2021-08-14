@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">Suite1</th></tr>
+<tr><td><a href="#t0">Test0</a></td><td class="num">0</td><td class="num attn">7</td><td class="num attn">1</td><td class="num">142</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite1</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test0 &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">DemoappTest.LoginTest</td><td><a href="#m0">loginTest</a></td><td rowspan="1">1625160119303</td><td rowspan="1">57</td></tr><tr><th colspan="4">Test0 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">DemoappTest.DeleteProfileTest</td><td><a href="#m1">deleteProfile</a></td><td rowspan="1">1625160119435</td><td rowspan="1">0</td></tr><tr><th colspan="4">Test0 &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">DemoappTest.LoginTest</td><td><a href="#m2">exit</a></td><td rowspan="1">1625160119442</td><td rowspan="1">0</td></tr><tr><th colspan="4">Test0 &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">DemoappTest.CreateBugTest</td><td><a href="#m3">bugsTest</a></td><td rowspan="1">1625160119414</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="1">DemoappTest.CreateFolderTest</td><td><a href="#m4">createFile</a></td><td rowspan="1">1625160119422</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="1">DemoappTest.CreateKnowledgeBaseTest</td><td><a href="#m5">knowledgeBaseTest</a></td><td rowspan="1">1625160119425</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="1">DemoappTest.CreateMailTest</td><td><a href="#m6">createMail</a></td><td rowspan="1">1625160119428</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="1">DemoappTest.CreateUserProfileTest</td><td><a href="#m7">createProfile</a></td><td rowspan="1">1625160119430</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="1">DemoappTest.GetCalendarDataTest</td><td><a href="#m8">CalendarData</a></td><td rowspan="1">1625160119437</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="1">DemoappTest.IdentifyClientTest</td><td><a href="#m9">manageClient</a></td><td rowspan="1">1625160119440</td><td rowspan="1">0</td></tr></tbody>
+</table>
+<h2>Test0</h2><h3 id="m0">DemoappTest.LoginTest#loginTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">DemoappTest.DeleteProfileTest#deleteProfile</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.TestNGException: 
+Cannot inject @Test annotated Method [deleteProfile] with [class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">DemoappTest.LoginTest#exit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">DemoappTest.CreateBugTest#bugsTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">DemoappTest.CreateFolderTest#createFile</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">DemoappTest.CreateKnowledgeBaseTest#knowledgeBaseTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">DemoappTest.CreateMailTest#createMail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">DemoappTest.CreateUserProfileTest#createProfile</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">DemoappTest.GetCalendarDataTest#CalendarData</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">DemoappTest.IdentifyClientTest#manageClient</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Unknown Source)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:106)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at UtilsPackage.WaitElements.waitForElement(WaitElements.java:19)
+	at DemoappPages.LoginPage.enterUsername(LoginPage.java:41)
+	at DemoappTest.LoginTest.loginTest(LoginTest.java:15)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

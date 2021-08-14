@@ -1,0 +1,22 @@
+package DemoappPages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class CalendarPage {
+	
+	@FindBy(xpath="//span[text()='Calendar']")
+	public WebElement calendarIcon;
+	
+	@FindBy(xpath="//button[@type='button' and text()='week']")
+	public WebElement weekButton;
+	
+	@FindBy(xpath="//a[@class='fc-more']")
+	public WebElement moreButton;
+	
+	@FindBy(xpath="//span[text()='Sun 6/13']")
+	public WebElement sunday;
+	
+	
+
+}

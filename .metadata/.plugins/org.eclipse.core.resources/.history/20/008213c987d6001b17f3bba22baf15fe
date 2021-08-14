@@ -1,0 +1,16 @@
+package UtilsPackage;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+public class ActionClass {
+
+	public static void openFile(WebDriver driver,String filename)
+	{
+		Actions actionProvider = new Actions(driver);
+		Action keydown = actionProvider.keyDown(Keys.SHIFT).sendKeys(filename + Keys.ENTER ).build();
+	    keydown.perform();
+	}
+}

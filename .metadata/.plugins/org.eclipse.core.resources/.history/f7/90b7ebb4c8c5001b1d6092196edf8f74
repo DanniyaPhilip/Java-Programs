@@ -1,0 +1,41 @@
+package Test;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Demoqa {
+
+	@Test
+	public void demo()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demoqa.com/browser-windows");
+		String parentWindow=driver.getWindowHandle();
+		System.out.println(parentWindow);
+		WebElement newwindow=driver.findElement(By.id("windowButton"));
+		newwindow.click();
+		
+		Set<String> newBrowser=driver.getWindowHandles();
+		for(String c:newBrowser)
+		{
+			if(!(c.equals(parentWindow)))
+			{
+				driver.switchTo().window(c);
+				System.out.println(driver.getCurrentUrl());
+				
+				WebElement text=driver.findElement(By.id("sampleHeading"));
+				Assert.assertEquals(text.getText(), "This is a sample page");
+				driver.close();
+		}
+	}
+	
+	}
+}

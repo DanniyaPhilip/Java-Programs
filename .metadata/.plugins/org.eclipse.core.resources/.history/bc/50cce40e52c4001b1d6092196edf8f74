@@ -1,0 +1,98 @@
+package Test;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class SwagLabs 
+{
+	WebDriver driver;
+	@BeforeMethod
+	public void beforemethod()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("https://www.saucedemo.com/");
+	}
+	
+	@Test
+	public void swagtest3()
+	{
+		WebElement username=driver.findElement(By.id("user-name"));
+		WebElement password=driver.findElement(By.id("password"));
+		WebElement login=driver.findElement(By.id("login-button"));
+        username.sendKeys("standard_user");
+		password.sendKeys("secret_sauce");
+		login.click();
+		WebElement select=driver.findElement(By.xpath("//select[@class='product_sort_container']")); 
+		Select dropdown=new Select(select);           
+	}
+	
+@Test(dataProvider="d1",dataProviderClass=DataInput.class,priority=1)
+	public void swagtest(String a,String b)
+	{
+		WebElement username=driver.findElement(By.id("user-name"));
+		WebElement password=driver.findElement(By.id("password"));
+		WebElement login=driver.findElement(By.id("login-button"));
+                    username.sendKeys(a);
+		            password.sendKeys(b);
+		            login.click();
+		            Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
+		            
+		            }
+@Test(dataProvider="d2",dataProviderClass=DataInput.class,priority=2)
+public void swagtest2(String a, String b)
+{
+	WebElement username=driver.findElement(By.id("user-name"));
+	WebElement password=driver.findElement(By.id("password"));
+	WebElement login=driver.findElement(By.id("login-button"));
+                username.sendKeys(a);
+	            password.sendKeys(b);
+	            login.click();
+	            
+	            WebElement itemname1=driver.findElement(By.xpath("//div[@class='inventory_item'][1]/div[@class='inventory_item_description']/div[@class='inventory_item_label']/a/div"));           
+	            WebElement item1price=driver.findElement(By.xpath("//div[@class='inventory_item'][1]/div[@class='inventory_item_description']/div[@class='pricebar']/div[@class='inventory_item_price']"));
+	           
+	            WebElement itemname2=driver.findElement(By.xpath("//div[@class='inventory_item'][2]/div[@class='inventory_item_description']/div[@class='inventory_item_label']/a/div"));           
+	            WebElement item2price=driver.findElement(By.xpath("//div[@class='inventory_item'][2]/div[@class='inventory_item_description']/div[@class='pricebar']/div[@class='inventory_item_price']"));
+	           
+	            WebElement itemname3=driver.findElement(By.xpath("//div[@class='inventory_item'][3]/div[@class='inventory_item_description']/div[@class='inventory_item_label']/a/div"));           
+	            WebElement item3price=driver.findElement(By.xpath("//div[@class='inventory_item'][3]/div[@class='inventory_item_description']/div[@class='pricebar']/div[@class='inventory_item_price']"));
+	            WebElement itemname4=driver.findElement(By.xpath("//div[@class='inventory_item'][4]/div[@class='inventory_item_description']/div[@class='inventory_item_label']/a/div"));           
+	            WebElement item4price=driver.findElement(By.xpath("//div[@class='inventory_item'][4]/div[@class='inventory_item_description']/div[@class='pricebar']/div[@class='inventory_item_price']"));
+	            WebElement itemname5=driver.findElement(By.xpath("//div[@class='inventory_item'][5]/div[@class='inventory_item_description']/div[@class='inventory_item_label']/a/div"));           
+	            WebElement item5price=driver.findElement(By.xpath("//div[@class='inventory_item'][5]/div[@class='inventory_item_description']/div[@class='pricebar']/div[@class='inventory_item_price']"));
+	            WebElement itemname6=driver.findElement(By.xpath("//div[@class='inventory_item'][6]/div[@class='inventory_item_description']/div[@class='inventory_item_label']/a/div"));           
+	            WebElement item6price=driver.findElement(By.xpath("//div[@class='inventory_item'][6]/div[@class='inventory_item_description']/div[@class='pricebar']/div[@class='inventory_item_price']"));
+
+System.out.println(itemname1.getText());
+System.out.println(item1price.getText());
+
+System.out.println(itemname2.getText());
+System.out.println(item2price.getText());
+
+System.out.println(itemname3.getText());
+System.out.println(item3price.getText());
+System.out.println(itemname4.getText());
+System.out.println(item4price.getText());
+System.out.println(itemname5.getText());
+System.out.println(item5price.getText());
+System.out.println(itemname6.getText());
+System.out.println(item6price.getText());
+
+}
+
+
+
+
+@AfterMethod
+public void aftertest()
+{
+	driver.quit();
+}
+}

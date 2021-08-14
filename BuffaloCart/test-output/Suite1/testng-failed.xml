@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]">
+  <parameter name="Browser" value="chrome"/>
+  <test thread-count="5" name="Test0(failed)">
+    <classes>
+      <class name="DemoappTest.CreateUserProfileTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="createProfile"/>
+          <include name="loginTest"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.CreateUserProfileTest -->
+      <class name="DemoappTest.GetCalendarDataTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="CalendarData"/>
+          <include name="loginTest"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.GetCalendarDataTest -->
+      <class name="DemoappTest.CreateKnowledgeBaseTest">
+        <methods>
+          <include name="knowledgeBaseTest"/>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.CreateKnowledgeBaseTest -->
+      <class name="DemoappTest.CreateMailTest">
+        <methods>
+          <include name="createMail"/>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.CreateMailTest -->
+      <class name="DemoappTest.IdentifyClientTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="manageClient"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.IdentifyClientTest -->
+      <class name="DemoappTest.CreateBugTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="bugsTest"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.CreateBugTest -->
+      <class name="DemoappTest.CreateFolderTest">
+        <methods>
+          <include name="createFile"/>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.CreateFolderTest -->
+      <class name="DemoappTest.DeleteProfileTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="deleteProfile"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- DemoappTest.DeleteProfileTest -->
+    </classes>
+  </test> <!-- Test0(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

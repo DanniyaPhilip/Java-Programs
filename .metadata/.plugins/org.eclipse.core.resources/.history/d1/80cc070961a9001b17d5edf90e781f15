@@ -1,0 +1,18 @@
+package Prgm1;
+
+public class Add {
+
+	public static void main(String[] args) {
+		Add.addition(5,9);
+		Add.addition(3,10);
+
+	}
+	public static void addition(int a,int b) {
+		int sum=a+b;
+		System.out.println("Sum1: "+sum);
+	}
+	public static void addition(int a,int b) {
+		int sum1=a+b;
+		System.out.println("Sum2: "+sum1);
+	}
+}

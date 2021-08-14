@@ -1,0 +1,27 @@
+package DemoappTest;
+
+import org.testng.annotations.Test;
+import DemoappPages.CreateBugPage;
+import DemoappPages.HomePage;
+
+public class CreateBugTest extends LoginTest{
+
+
+	
+	@Test
+	public void bugsTest()
+	{
+		HomePage homepage=new HomePage(driver);
+		homepage.selectBugIcon();
+		CreateBugPage bugspage=new CreateBugPage(driver);
+		bugspage.clickNewBugs();
+		bugspage.giveIssueNo("Q18JUP");
+		bugspage.giveBugTitle("Submit button not working");
+		bugspage.clickSaveButton();
+	}
+	
+}
+	
+	
+	
+	

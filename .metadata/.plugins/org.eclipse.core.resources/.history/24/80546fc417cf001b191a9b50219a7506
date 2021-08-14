@@ -1,0 +1,39 @@
+package DemoappPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CalendarPage {
+	
+	@FindBy(xpath="//button[@type='button' and text()='week']")
+	public WebElement weekButton;
+	
+	@FindBy(xpath="//a[@class='fc-more']")
+	public WebElement moreButton;
+	
+	@FindBy(xpath="//span[text()='Sun 6/13']")
+	public WebElement sunday;
+	
+public WebDriver driver;
+	public CalendarPage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	public void calendarDetails() {
+		weekButton.click();
+		
+		for(int i=13;i<=19;i++)
+		{
+			String xpath="//th[@data-date="+"2021-06-"+i+"]";
+			WebElement getDate=driver.findElement(By.xpath(xpath));
+			System.out.println(getDate.getText());
+		}
+		
+	}
+	
+	
+
+}

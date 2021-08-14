@@ -1,0 +1,25 @@
+package UtilsPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class WaitElements {
+	public WebDriver driver;
+	public WaitElements(WebDriver driver)
+	{
+	this.driver=driver;	
+	}
+	
+	public void waitForElement(int t, String path) {
+	WebDriverWait wait=new WebDriverWait(driver,t);
+	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(path))));
+	}
+	public void waitForAlert(int t) {
+		WebDriverWait wait=new WebDriverWait(driver,t);
+		wait.until(ExpectedConditions.alertIsPresent());	
+	}
+	
+
+}

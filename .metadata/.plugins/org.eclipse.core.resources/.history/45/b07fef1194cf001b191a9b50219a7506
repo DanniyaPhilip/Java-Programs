@@ -1,0 +1,12 @@
+package DemoappPages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class MailboxPage {
+
+	@FindBy(xpath="//span[text()='Mailbox']")
+	public WebElement mailIcon;
+	
+	
+}

@@ -1,0 +1,23 @@
+package DemoappTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.testng.annotations.Test;
+
+import DemoappPages.DeleteProfile;
+import DemoappPages.HomePage;
+
+public class DeleteProfileTest extends LoginTest {
+
+	@Test(enabled=false,priority=4)
+	public void deleteProfile()
+	{
+		
+		HomePage homepage=new HomePage(driver);
+		homepage.clickUser(); 
+		
+		DeleteProfile deleteUser= new DeleteProfile(driver);
+		deleteUser.deleteUser1("Mary121");
+	}
+	
+}

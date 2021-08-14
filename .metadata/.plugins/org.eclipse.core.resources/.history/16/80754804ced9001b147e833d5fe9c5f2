@@ -1,0 +1,13 @@
+package DemoappTest;
+
+import org.testng.annotations.Test;
+
+public class CreateKnowledgeBaseTest extends LoginTest {
+	
+	@Test
+	public void knowledgeBaseTest()
+	{
+		
+	}
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="DemoappTest.BugsTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="bugsTest"/>
+        </methods>
+      </class> <!-- DemoappTest.BugsTest -->
+      <class name="DemoappTest.ManageClientTest">
+        <methods>
+          <include name="manageClient"/>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- DemoappTest.ManageClientTest -->
+      <class name="DemoappTest.CalendarDataTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="CalendarData"/>
+        </methods>
+      </class> <!-- DemoappTest.CalendarDataTest -->
+      <class name="DemoappTest.DeleteProfileTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="loginTest"/>
+          <include name="deleteProfile"/>
+        </methods>
+      </class> <!-- DemoappTest.DeleteProfileTest -->
+      <class name="DemoappTest.UserProfileTest">
+        <methods>
+          <include name="webpage"/>
+          <include name="createProfile"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- DemoappTest.UserProfileTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

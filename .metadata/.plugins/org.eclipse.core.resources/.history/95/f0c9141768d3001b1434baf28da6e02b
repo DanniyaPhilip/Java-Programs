@@ -1,0 +1,22 @@
+package DemoappTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.testng.annotations.Test;
+
+import DemoappPages.FolderPage;
+import DemoappPages.HomePage;
+
+public class CreateFolder extends LoginTest{
+
+	@Test(enabled=true)
+	public void createFile()
+	{
+		HomePage homepage=new HomePage(driver);
+		homepage.fileManager();	
+		
+		FolderPage createfolder=new FolderPage(driver);
+		createfolder.createFolder("FOLDERNEW");
+		createfolder.createFile("FOLDERNEW","filenew");
+	}
+}

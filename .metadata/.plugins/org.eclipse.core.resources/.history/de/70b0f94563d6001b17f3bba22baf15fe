@@ -1,0 +1,43 @@
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class Demoqa {
+	WebDriver driver;
+	@BeforeMethod
+	public void method1()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("https://demoqa.com/text-box");
+	}
+	@Test
+	public void input1()
+	{
+		WebElement username=driver.findElement(By.id("userName"));
+		WebElement emailid=driver.findElement(By.id("userEmail"));
+		username.sendKeys("Leon Thomas");
+		emailid.sendKeys("leon@wertyuc.com");
+		System.out.println("Test 1 of Class 1 executed");
+	}
+	@Test
+	public void input2()
+	{
+		WebElement username=driver.findElement(By.id("userName"));
+		WebElement emailid=driver.findElement(By.id("userEmail"));
+		username.sendKeys("Jane Sara");
+		emailid.sendKeys("jane@wertyu.com");
+		System.out.println("Test 2 of Class 1 executed");
+		
+	}
+	@AfterMethod
+	public void method2()
+	{
+		driver.quit();
+	}
+
+}

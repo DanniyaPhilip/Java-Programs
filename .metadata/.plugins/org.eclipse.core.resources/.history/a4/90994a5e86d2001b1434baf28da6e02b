@@ -1,0 +1,60 @@
+package DemoappPages;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CalendarPage {
+	
+	@FindBy(xpath="//button[@type='button' and text()='week']")
+	public WebElement weekButton;
+	
+	@FindBy(xpath="//button[@type='button' and text()='day']")
+	public WebElement dayButton;
+	
+	@FindBy(xpath="//a[@class='fc-more']")
+	public WebElement moreButton;
+	
+	@FindBy(xpath="//span[text()='Sun 6/13']")
+	public WebElement sunday;
+	
+	@FindBy(xpath="//tr/th/span")
+	public WebElement getDay;
+	
+public WebDriver driver;
+	public CalendarPage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	public void calendarDetails() {
+		dayButton.click();
+		DayOfWeek dayOfWeek = DayOfWeek.from(LocalDate.now());
+		System.out.println(dayOfWeek);
+		
+		String day=getDay.getText();
+		int c=0;
+		if(day.equalsIgnoreCase("Monday"))
+			c=1;
+		if(day.equalsIgnoreCase("Tuesday"))
+			c=2;
+		else if(day.equalsIgnoreCase("Wednesday"))
+			c=3;
+		else if(day.equalsIgnoreCase("Thursday"))	
+			c=4;
+		else if(day.equalsIgnoreCase("Friday"))
+			c=5;
+		//for(int i=0;i<c;i++)
+			
+		
+		}
+		
+	}
+	
+	
+
+

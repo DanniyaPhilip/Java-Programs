@@ -1,0 +1,58 @@
+package Test;
+
+import java.io.FileInputStream;
+
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+
+public class SwagLabs 
+{
+
+	public static XSSFSheet sh;
+	
+	public static void main(String args[]) throws Exception {
+		
+		FileInputStream f= new FileInputStream("C:\\Users\\danniyax\\Documents\\SwagLabs.xlsx");
+			
+		XSSFWorkbook w= new XSSFWorkbook(f);
+			sh= w.getSheet("Sheet1");
+			int t=sh.getLastRowNum();
+			System.out.println(t);
+			Object ob[][]= new Object[t][2];
+			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+			WebDriver driver=new ChromeDriver();
+			
+			for(int i=1;i<t;i++)
+			{
+				for(int j=1;j<3;j++)
+				{
+					Row r= sh.getRow(i);
+					Cell c= r.getCell(j); 
+					ob[i][j]=c.getStringCellValue();
+					
+					driver.get("https://www.saucedemo.com/");
+					WebElement username=driver.findElement(By.id("user-name"));
+					WebElement password=driver.findElement(By.id("password"));
+					WebElement login=driver.findElement(By.id("login-button"));
+					
+					if(ob[i][j]=="standard_user" || ob[i][j]=="locked_out_user" || ob[i][j]=="problem_user" || ob[i][j]=="performance_glitch_user")
+					{
+						username.sendKeys("standard_user" );
+					}
+					else if (ob[i][j]=="secret_sauce")
+						password.sendKeys("secret_sauce" );
+					else
+						System.out.println("Incorrect Username or Password");
+					
+					login.click();
+}
+}
+}
+}

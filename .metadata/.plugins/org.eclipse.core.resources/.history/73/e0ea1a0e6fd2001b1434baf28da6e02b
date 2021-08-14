@@ -1,0 +1,92 @@
+package DemoappPages;
+
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ManageClient {
+	@FindBy(xpath="//label/input[@type='search']")
+	public WebElement search;
+	
+	@FindBy(xpath="//a[contains(text(),'Obsqura')]")
+	List<WebElement> clients;
+	
+	
+	public WebDriver driver;
+
+public ManageClient(WebDriver driver)
+{
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+}
+
+public void clientList()
+{
+	String clientWindow=driver.getWindowHandle();
+	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+	search.sendKeys("Obsqura");
+	
+for(WebElement client:clients)
+{
+	String openNewWindow=Keys.chord(Keys.CONTROL,Keys.RETURN);
+	client.sendKeys(openNewWindow);
+	Set<String> newBrowser=driver.getWindowHandles();
+	for (String i:newBrowser)
+	{
+		if(!(i.equals(clientWindow)))
+			driver.switchTo().window(i);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		WebElement clientname=driver.findElement(By.xpath("//div[@class='col-md-6']/div/div/div[@class='col-md-6'][1]"));
+		System.out.println(clientname);
+		WebElement clientMailId=driver.findElement(By.xpath("//div[@class='col-md-6']/div/div/div[@class='col-md-6'][3]"));
+		System.out.println(clientMailId);
+		//driver.close();
+	}
+}
+			
+		
+		
+	}
+	
+}
+	
+	
+	/*System.out.println(k);
+
+	String clientWindow=driver.getWindowHandle();
+List<WebElement> clients=driver.findElements(By.xpath("//a[contains(text(), 'Obsqura')]"));
+
+for (WebElement client:clients)	
+{
+	//System.out.println(client.getText());
+	client.click();
+	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+	//WebElement clientName=driver.findElement(By.xpath("(//div[@class='col-md-6'])[2]"));
+	//System.out.println(clientName.getText());
+	//WebElement clientMailId=driver.findElement(By.xpath("(//div[@class='col-md-6'])[4]"));
+	//System.out.println(clientMailId.getText());
+	
+	driver.navigate().back();
+	driver.switchTo().window(clientWindow);
+	
+	try {
+			client=driver.findElement(By.xpath(xpath));
+			
+			}
+			catch(org.openqa.selenium.StaleElementReferenceException ex)
+			{
+				client=driver.findElement(By.xpath(xpath));
+				System.out.println(client.getText());
+				client.click();	
+			}
+	}*/
+
+

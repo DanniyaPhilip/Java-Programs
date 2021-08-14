@@ -1,0 +1,13 @@
+
+<suite name = "Regression">
+<parameter name="Browser" value="chrome" />
+    <test name = "Parallel Test0"  parallel = "classes" thread-count = "2">
+    
+        <classes>
+         <class name = "DemoappTest.LoginTest" />
+           
+            </classes>
+     
+    </test>
+
+</suite>

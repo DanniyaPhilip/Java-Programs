@@ -1,0 +1,46 @@
+package DemoappPages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class MailboxPage {
+
+
+	@FindBy(xpath="//a[@class='btn btn-danger btn-xs mr-sm']")
+	public WebElement composeButton;
+	
+	@FindBy(xpath="//input[@class='select2-search__field']")
+	public WebElement selectRecipient;
+	
+	@FindBy(xpath="//input[@name='subject']")
+	public WebElement subject;
+	
+	@FindBy(xpath="//html[@dir='ltr']")
+	public WebElement typeSubject;
+	
+    public WebDriver driver;
+	public MailboxPage(WebDriver driver) {
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+	}
+	
+	public void compose() {
+		composeButton.click();
+	}
+	public void recipient()
+	{
+		Select dropdown=new Select(selectRecipient);
+		dropdown.selectByIndex(0);
+	}
+	public void giveSubject()
+	{
+		subject.sendKeys("Demo mail");
+	}
+	public void mailBody()
+	{
+		typeSubject.sendKeys("Subject");
+	}
+}

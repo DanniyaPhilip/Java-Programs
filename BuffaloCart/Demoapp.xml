@@ -1,0 +1,19 @@
+
+<suite name = "Suite1">
+<parameter name="Browser" value="chrome" />
+    <test name = "Test0" >
+    <classes>
+         <class name = "DemoappTest.LoginTest" />
+         <class name = "DemoappTest.CreateBugTest" />
+          <class name = "DemoappTest.CreateFolderTest" />
+          <class name = "DemoappTest.CreateKnowledgeBaseTest" />
+          <class name = "DemoappTest.CreateMailTest" />
+          <class name = "DemoappTest.CreateUserProfileTest" />
+          <class name = "DemoappTest.DeleteProfileTest" />
+          <class name = "DemoappTest.GetCalendarDataTest" />
+          <class name = "DemoappTest.IdentifyClientTest" />
+            </classes>
+     </test>
+     
+
+</suite>

@@ -1,0 +1,130 @@
+package DemoappTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.*;
+
+import DemoappPages.BugsPage;
+import DemoappPages.CalendarPage;
+import DemoappPages.CreateProfilePage;
+import DemoappPages.DeleteProfile;
+import DemoappPages.FolderPage;
+import DemoappPages.HomePage;
+import DemoappPages.LoginPage;
+import DemoappPages.MailboxPage;
+import DemoappPages.ManageClient;
+import DemoappPages.UserProfilesPage;
+
+public class LoginTest {
+
+	WebDriver driver;
+	
+	@BeforeTest
+	public void loginTest()
+	{
+	LoginPage loginpage=new LoginPage(driver);
+	loginpage.enterUsername("admin");
+	loginpage.enterPassword("123456");
+	loginpage.clickSignInbutton();
+		}
+	@Test
+	public void createFile()
+	{
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		HomePage homepage=new HomePage(driver);
+		homepage.fileManager();	
+		
+		FolderPage createfolder=new FolderPage(driver);
+		createfolder.createFolder("FolderN");
+		createfolder.createFile("FolderN","file1");
+	}
+	@Test(enabled=false)
+	public void createMail()
+	{
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		HomePage homepage=new HomePage(driver);
+		homepage.clickMail();
+		
+		MailboxPage mailbox=new MailboxPage(driver);
+		mailbox.compose();
+		mailbox.recipient();
+		mailbox.giveSubject("Demo Mail");
+	}
+	
+	@Test(enabled=false)
+	public void CalendarData()
+	{
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		HomePage homepage=new HomePage(driver);
+		homepage.selectCalendar();
+		
+		CalendarPage calendarData=new CalendarPage(driver);
+		calendarData.clickDay();
+		calendarData.calendarDetails();
+	}
+	@Test(enabled=false)
+	public void deleteProfile()
+	{
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		HomePage homepage=new HomePage(driver);
+		homepage.clickUser(); 
+		
+		DeleteProfile deleteUser= new DeleteProfile(driver);
+		deleteUser.deleteUser1("abcdefg");
+	}
+	@Test(enabled=false)
+	public void createProfile()
+	{
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	HomePage homepage=new HomePage(driver);
+	homepage.clickUser(); 
+	
+    UserProfilesPage userProfiles=new UserProfilesPage(driver);
+    userProfiles.clickNewUser();
+    CreateProfilePage createProfile= new CreateProfilePage(driver);
+    createProfile.enterFullName("Mary Philip");
+    createProfile.enterEmploymentID("IS12456");
+    createProfile.enterUserName("Mary121");
+    createProfile.enterPassword("Tyuiop89");
+    createProfile.confirmPassword("Tyuiop89");
+    createProfile.enterEmailaddress("maphp@uyit.com");
+    createProfile.uploadImage(driver);
+    createProfile.selectUsertype("Admin");
+    createProfile.selectDesignation();
+    createProfile.createUser();	
+		}
+     
+	@Test(enabled=false)
+	public void createBug()
+	{
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	HomePage homepage=new HomePage(driver);
+	homepage.selectBugIcon();
+	
+	BugsPage bugspage=new BugsPage(driver);
+	bugspage.newBugs();
+	bugspage.giveIssueNo();
+	bugspage.bugTitle();
+	bugspage.clickSaveButton();
+	}
+     @Test(enabled=false)
+	public void manageClient()
+	{
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	HomePage homepage=new HomePage(driver);
+	homepage.selectClient();
+	ManageClient manageClient= new ManageClient(driver);
+	manageClient.searchSelect();
+	manageClient.clientList();
+	}
+    @BeforeSuite()
+	public void webpage()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Documents\\chromedriver_win32 (2)\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("http://buffalocart.com/demo/erp/login");
+	}
+}

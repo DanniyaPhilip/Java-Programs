@@ -1,0 +1,33 @@
+package DemoappTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import DemoappPages.CreateProfilePage;
+import DemoappPages.HomePage;
+import DemoappPages.UserProfilesPage;
+
+public class UserProfileTest extends LoginTest {
+
+	@Test
+	public void createProfile()
+	{
+		
+	UserProfilesPage userProfiles=new UserProfilesPage(driver);
+    
+	userProfiles.clickNewUser();
+    CreateProfilePage createProfile= new CreateProfilePage(driver);
+    createProfile.enterFullName("Mary Philip");
+    createProfile.enterEmploymentID("IS12456");
+    createProfile.enterUserName("Mary121");
+    createProfile.enterPassword("Tyuiop89");
+    createProfile.confirmPassword("Tyuiop89");
+    createProfile.enterEmailaddress("maphp@uyit.com");
+    createProfile.uploadImage(driver);
+    createProfile.selectUsertype("Admin");
+    createProfile.selectDesignation();
+    createProfile.createUser();
+}
+}

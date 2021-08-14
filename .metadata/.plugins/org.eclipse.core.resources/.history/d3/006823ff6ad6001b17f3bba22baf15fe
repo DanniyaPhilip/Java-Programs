@@ -1,0 +1,23 @@
+package DemoappTest;
+
+import org.testng.annotations.Test;
+
+import DemoappPages.DeleteProfile;
+import DemoappPages.HomePage;
+import UtilsPackage.ExcelRead;
+
+public class DeleteProfileTest extends LoginTest {
+
+	@Test
+	public void deleteProfile()
+	{
+		
+		HomePage homepage=new HomePage(driver);
+		homepage.clickUser(); 
+		
+		DeleteProfile deleteUser= new DeleteProfile(driver);
+		
+		deleteUser.deleteUserProfile("Mary123");
+	}
+	
+}

@@ -1,0 +1,18 @@
+<suite name = "Sanity">
+    <test name = "Sequential Test0" >
+        <classes>
+         <class name = "Pack.Demoqa" />
+            <methods>
+            <include name="input1" />
+           
+            </methods>
+             <class name = "Pack.SauceDemo" /> 
+             <methods>
+           
+            <include name="input2"/>
+              
+             </methods>
+            </classes>
+     
+    </test>
+    </suite>

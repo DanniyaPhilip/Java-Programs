@@ -1,0 +1,11 @@
+
+<suite name = "Regression">
+    <test name = "Parallel Test0"  parallel = "classes" thread-count = "2">
+        <classes>
+         <class name = "DemoappTest.CreateBugTest" />
+           
+            </classes>
+     
+    </test>
+
+</suite>

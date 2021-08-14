@@ -1,0 +1,40 @@
+package DemoappPages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CreateKnowledgeBase {
+
+	@FindBy(xpath="//div/a[text()='  New Category']")
+	public WebElement newCategory;
+	
+	@FindBy(xpath="//input[@type='text' and @name='category']")
+	public WebElement enterCategory;
+	
+	@FindBy(xpath="//input[@type='text' and @name='sort']")
+	public WebElement enterOrder;
+	
+	@FindBy(xpath="//button[@id='sbtn']")
+	public WebElement saveButton;
+	
+	public WebDriver driver;
+	public CreateKnowledgeBase(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void createNewCategory()
+	{
+		newCategory.click();
+	}
+	public void enterCategoryDetails(String categoryName,CharSequence[] i)
+	{
+		enterCategory.sendKeys(categoryName);
+		enterOrder.sendKeys(i);
+		saveButton.click();
+	}
+	
+	
+}

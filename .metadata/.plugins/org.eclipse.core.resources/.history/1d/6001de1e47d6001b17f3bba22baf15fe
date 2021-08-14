@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Demoapp Tests">
+    <test name = "Test0"  >
+        <classes>
+         <class name = "DemoappTest.LoginTest" />
+            <groups>
+            <run>
+           <include name="RunTest" />
+           </run>
+
+            
+            </groups>
+
+
+
+            </classes>
+     
+    </test>
+
+</suite>

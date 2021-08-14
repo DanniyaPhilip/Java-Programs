@@ -1,0 +1,36 @@
+package Test;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class Alert {
+	
+	WebDriver driver;
+	String alertWindow;
+	@BeforeMethod
+	public void before()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("https://demoqa.com/alerts");
+		alertWindow=driver.getWindowHandle();
+		System.out.println(alertWindow);
+	}
+@Test
+	public void alerttest1()
+	{
+		
+		
+		WebElement alertButton=driver.findElement(By.id("alertButton"));
+		alertButton.click();
+		driver.switchTo().alert().accept();
+		
+		
+	}
+	
+}

@@ -1,0 +1,23 @@
+package DemoappTest;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import DemoappPages.HomePage;
+import DemoappPages.IdentifyClients;
+
+public class IdentifyClientsTest extends LoginTest {
+	
+	@Test
+	public void manageClient() 
+	{
+		
+	HomePage homepage=new HomePage(driver);
+	homepage.selectClient();
+	
+	IdentifyClients identifyClient= new IdentifyClients(driver);
+	identifyClient.searchSelect();
+	identifyClient.clientList();
+	}
+}

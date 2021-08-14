@@ -1,0 +1,30 @@
+package Test;
+
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class Testprgm {
+	@Test(dataProvider="datap1")
+	public void test1(int actual,int expected)
+	{
+		//int expected=16;
+		//int actual=16;
+		/*
+		if(n>=10)
+			System.out.println("Number above 10");
+		else
+			System.out.println("Numer below 10");
+			*/
+		Assert.assertEquals(expected, actual);
+		//Assert.assertEquals(expected, 17);
+		//Assert.assertEquals(expected, 18, "My test case failed");
+		//Assert.assertTrue(actual!=expected, "Test case failed");
+		
+	}
+	@DataProvider(name="datap1")
+	public Object[][] dataprovider()
+	{
+		Object ob[][]= {{12,87},{56,90}};
+		return ob;
+	}
+}

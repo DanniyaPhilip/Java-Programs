@@ -1,0 +1,19 @@
+<suite name = "Regression">
+    <test name = "Parallel Test0"  parallel = "classes" thread-count = "2">
+        <classes>
+         <class name = "Pack.Demoqa" />
+            <methods>
+            <include name="input1" />
+            <include name="input2"/>
+            </methods>
+             <class name = "Pack.SauceDemo" /> 
+             <methods>
+             <include name="input1" />
+            <include name="input2"/>
+              <include name="input3"/>
+             </methods>
+            </classes>
+     
+    </test>
+
+</suite>

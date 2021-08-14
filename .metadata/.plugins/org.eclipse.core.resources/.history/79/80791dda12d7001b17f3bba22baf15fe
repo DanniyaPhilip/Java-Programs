@@ -1,0 +1,13 @@
+package UtilsPackage;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+public class AssertClass {
+	
+	public static void checkElementIsDisplayed(WebElement element)
+	{
+		Assert.assertTrue(element.isDisplayed());
+	}
+
+}

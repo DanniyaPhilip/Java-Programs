@@ -1,0 +1,35 @@
+
+<suite name = "Suite3"  parallel = "tests">
+<parameter name="Browser" value="chrome" />
+    <test name = "Test3"  >
+    
+        <classes>
+         <class name = "DemoappTest.LoginTest" />
+         <class name = "DemoappTest.CreateBugTest" />
+          <class name = "DemoappTest.CreateFolderTest" />
+          <class name = "DemoappTest.CreateKnowledgeBaseTest" />
+          <class name = "DemoappTest.CreateMailTest" />
+          <class name = "DemoappTest.CreateUserProfileTest" />
+          <class name = "DemoappTest.DeleteProfileTest" />
+          <class name = "DemoappTest.GetCalendarDataTest" />
+          <class name = "DemoappTest.IdentifyClientTest" />
+            </classes>
+     </test>
+    <parameter name="Browser" value="firefox" />
+    <test name = "Test4" >
+    
+        <classes>
+         <class name = "DemoappTest.LoginTest" />
+         <class name = "DemoappTest.CreateBugTest" />
+          <class name = "DemoappTest.CreateFolderTest" />
+          <class name = "DemoappTest.CreateKnowledgeBaseTest" />
+          <class name = "DemoappTest.CreateMailTest" />
+          <class name = "DemoappTest.CreateUserProfileTest" />
+          <class name = "DemoappTest.DeleteProfileTest" />
+          <class name = "DemoappTest.GetCalendarDataTest" />
+          <class name = "DemoappTest.IdentifyClientTest" />
+            </classes>
+     </test> 
+     
+
+</suite>

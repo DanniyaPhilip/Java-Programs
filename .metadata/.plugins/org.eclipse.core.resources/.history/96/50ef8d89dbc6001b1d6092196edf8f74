@@ -1,0 +1,44 @@
+package Test;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
+
+public class Alert {
+	
+	WebDriver driver;
+	String alertWindow;
+	@BeforeMethod
+	public void before()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("https://demoqa.com/alerts");
+		alertWindow=driver.getWindowHandle();
+		System.out.println(alertWindow);
+	}
+@Test
+	public void alerttest1()
+	{
+		WebElement alertButton=driver.findElement(By.id("alertButton"));
+		alertButton.click();
+		Assert.assertEquals(driver.switchTo().alert().getText(),"You clicked a button");
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().accept();
+		driver.quit();
+		}
+	@Test
+	public void alerttest2()
+	{
+		WebElement timerAlert=driver.findElement(By.id("timerAlertButton"));
+		timerAlert.click();
+		Assert.assertEquals(driver.switchTo().alert().getText(),"This alert appeared after 5 seconds");
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().accept();
+		}
+}

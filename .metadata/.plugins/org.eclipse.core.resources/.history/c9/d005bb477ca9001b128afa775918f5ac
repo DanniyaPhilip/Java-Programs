@@ -1,0 +1,21 @@
+package Prgm1;
+
+public class Average1 {
+
+	public void main(String[] args) {
+		Average1.average(3,8,12);
+		Average1.average(2.5f,9.0f,4.6f);
+
+	}
+public static void average(int a,int b,int c)
+{
+	int av=(a+b+c)/2;
+	System.out.println("Average of Integer inputs: "+av);
+	
+}
+public static void average(float d,float e,float f)
+{
+	float av=(d+e+f)/2;
+	System.out.println("Average of Floating point inputs: "+av);
+}
+}

@@ -1,0 +1,28 @@
+package Test;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class SwagLabs 
+{
+
+	public static XSSFSheet sh;
+	
+	public static void main(String args[]) throws Exception {
+		
+		FileInputStream f= new FileInputStream("C:\\Users\\danniyax\\Documents\\SwagLabs.xlsx");
+			
+		XSSFWorkbook w= new XSSFWorkbook(f);
+			sh= w.getSheet("Sheet1");
+			int t=sh.getLastRowNum();
+			System.out.println(t);
+			Object ob[][]= new Object[t][3];
+	
+	
+}

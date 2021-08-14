@@ -1,0 +1,21 @@
+package DemoappTest;
+
+import org.testng.annotations.Test;
+
+import DemoappPages.HomePage;
+import DemoappPages.IdentifyClients;
+
+public class ManageClientTest extends LoginTest {
+	
+	@Test
+	public void manageClient()
+	{
+		
+	HomePage homepage=new HomePage(driver);
+	homepage.selectClient();
+	
+	IdentifyClients manageClient= new IdentifyClients(driver);
+	manageClient.searchSelect();
+	manageClient.clientList();
+	}
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-06-08T13:02:40Z" name="Default suite" finished-at="2021-06-08T13:02:50Z" duration-ms="9628">
+    <groups>
+    </groups>
+    <test started-at="2021-06-08T13:02:40Z" name="Default test" finished-at="2021-06-08T13:02:50Z" duration-ms="9628">
+      <class name="DemoTest.Datainput">
+        <test-method is-config="true" signature="befclass()[pri:0, instance:DemoTest.Datainput@37911f88]" started-at="2021-06-08T13:02:40Z" name="befclass" finished-at="2021-06-08T13:02:47Z" duration-ms="6478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- befclass -->
+        <test-method signature="test1()[pri:0, instance:DemoTest.Datainput@37911f88]" started-at="2021-06-08T13:02:47Z" name="test1" finished-at="2021-06-08T13:02:50Z" duration-ms="2748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:0, instance:DemoTest.Datainput@37911f88]" started-at="2021-06-08T13:02:50Z" name="test2" finished-at="2021-06-08T13:02:50Z" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method signature="test3()[pri:0, instance:DemoTest.Datainput@37911f88]" started-at="2021-06-08T13:02:50Z" name="test3" finished-at="2021-06-08T13:02:50Z" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+      </class> <!-- DemoTest.Datainput -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

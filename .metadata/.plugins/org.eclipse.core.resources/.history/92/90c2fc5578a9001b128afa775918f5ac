@@ -1,0 +1,14 @@
+package Prgm1;
+
+public class Add {
+
+	public static void main(String[] args) {
+		Add.addition(4,6);
+	}
+	public static void addition(int a, int b) {
+		int sum=a+b;
+		System.out.println(sum);
+
+	}
+
+}

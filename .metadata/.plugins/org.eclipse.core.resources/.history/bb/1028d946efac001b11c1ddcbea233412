@@ -1,0 +1,12 @@
+package package1;
+import package2.B;
+
+public class A extends B{
+
+	public static void main(String[] args) {
+		A ob=new A();
+		ob.get();
+		ob.set();
+		ob.wet();
+		ob.met();
+} }

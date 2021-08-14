@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Suite1">
+     <test name = "Test1" parellel="classes" thread-count="2"  >
+    <parameter name="Browser" value="chrome"></parameter>
+        <classes>
+        <class name="DemoappTest.LoginTest"/>
+        <class name="DemoappTest.UserProfileTest"/>
+        <class name="DemoappTest.BugsTest"/>
+        <class name="DemoappTest.CalendarDataTest"/>
+        <class name="DemoappTest.ManageClientTest"/>
+        <class name="DemoappTest.DeleteProfileTest"/>
+        </classes>
+    </test>
+</suite> 
+   
+
+<suite name = "Suite2">
+     <test name = "Test2" parellel="classes" thread-count="2"  >
+    <parameter name="Browser" value="firefox"></parameter>
+        <classes>
+        <class name="DemoappTest.LoginTest"/>
+        <class name="DemoappTest.UserProfileTest"/>
+        <class name="DemoappTest.BugsTest"/>
+        <class name="DemoappTest.CalendarDataTest"/>
+        <class name="DemoappTest.ManageClientTest"/>
+        <class name="DemoappTest.DeleteProfileTest"/>
+        </classes>
+    </test>
+
+</suite>

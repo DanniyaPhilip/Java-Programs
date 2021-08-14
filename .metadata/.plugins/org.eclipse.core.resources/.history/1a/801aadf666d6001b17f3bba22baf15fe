@@ -1,0 +1,18 @@
+package DemoappTest;
+import org.testng.annotations.Test;
+import DemoappPages.CalendarPage;
+import DemoappPages.HomePage;
+
+public class CalendarDataTest extends LoginTest  {
+
+	@Test
+	public void CalendarData()
+	{
+		HomePage homepage=new HomePage(driver);
+		homepage.selectCalendar();
+		
+		CalendarPage calendarData=new CalendarPage(driver);
+		calendarData.clickDay();
+		calendarData.calendarDetails();
+	}
+}

@@ -1,0 +1,14 @@
+package UtilsPackage;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class SelectDropdown {
+
+	public void selectFromDropdown(WebElement select,String value)
+	{
+		Select dropdown=new Select(select);
+		dropdown.selectByValue(value);
+	}
+	
+}

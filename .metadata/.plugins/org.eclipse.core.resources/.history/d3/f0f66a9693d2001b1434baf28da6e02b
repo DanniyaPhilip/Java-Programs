@@ -1,0 +1,56 @@
+package DemoappPages;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CalendarPage {
+	
+	@FindBy(xpath="//button[@type='button' and text()='week']")
+	public WebElement weekButton;
+	
+	@FindBy(xpath="//button[@type='button' and text()='day']")
+	public WebElement dayButton;
+	
+	@FindBy(xpath="//a[@class='fc-more']")
+	public WebElement moreButton;
+	
+	@FindBy(xpath="//div[@class='fc-center']/h2")
+	public WebElement date;
+	
+	@FindBy(xpath="//span//parent::th")
+	public WebElement day;
+	
+	@FindBy(xpath="//tr/th/span")
+	public WebElement getDay;
+	
+	@FindBy(xpath="//div[@class='fc-content']")
+	List<WebElement> events;
+	
+public WebDriver driver;
+	public CalendarPage(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void clickDay()
+	{
+		dayButton.click();
+	}
+	public void calendarDetails() {
+		System.out.println(date.getText());
+		System.out.println(day.getText());
+		
+		}
+		
+	}
+	
+	
+
+

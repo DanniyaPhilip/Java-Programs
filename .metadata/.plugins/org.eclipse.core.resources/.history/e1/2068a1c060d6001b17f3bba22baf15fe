@@ -1,0 +1,61 @@
+package Pack;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class SauceDemo {
+	WebDriver driver;
+	@BeforeClass
+	public void method1()
+	{
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\danniyax\\Downloads\\chromedriver_win32\\chromedriver.exe");
+}
+	@BeforeMethod
+	public void method2()
+	{
+		driver=new ChromeDriver();
+		driver.get("https://www.saucedemo.com/");
+	}
+	@Test
+	public void input1()
+	{
+		WebElement username=driver.findElement(By.id("user-name"));
+		WebElement password=driver.findElement(By.id("password"));
+		username.sendKeys("standard_user");
+		password.sendKeys("secret_sauce");
+		WebElement login=driver.findElement(By.id("login-button"));
+		login.click();
+		System.out.println("Test 1 of Class 2 executed");
+	}
+	@Test
+	public void input2()
+	{
+		WebElement username=driver.findElement(By.id("user-name"));
+		WebElement password=driver.findElement(By.id("password"));
+		username.sendKeys("problem_user");
+		password.sendKeys("secret_sauce");
+		WebElement login=driver.findElement(By.id("login-button"));
+		login.click();
+		System.out.println("Test 2 of Class 2 executed");
+	}
+	@Test
+	public void input3()
+	{
+		WebElement username=driver.findElement(By.id("user-name"));
+		WebElement password=driver.findElement(By.id("password"));
+		username.sendKeys("performance_glitch_user");
+		password.sendKeys("secret_sauce");
+		WebElement login=driver.findElement(By.id("login-button"));
+		login.click();
+		System.out.println("Test 3 of Class 2 executed");
+	}
+@AfterMethod
+public void method3()
+{
+	driver.quit();
+}
+
+}
